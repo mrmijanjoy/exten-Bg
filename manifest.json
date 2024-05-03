@@ -1,0 +1,29 @@
+{
+    "manifest_version":3,
+    "name":"My Choice",
+    "version":"1.0",
+    "description":"This is a chrome extension",
+    "icons":{
+        "128":"./images/mouse.png",
+        "48":"./images/engineering.png",
+        "16":"./images/endless.png"
+    },
+    "action":{
+        "default_popup":"popup.html",
+        "default_icon":"./images/endless.png",
+        "default_title":"My Choice"
+    },
+    "background":{
+        "service_worker":"eventpage.js"
+    },
+    "content_scripts":[
+        {
+            "matches":["https://www.google.com/"],
+            "js":["content.js","jquery.min.js"]
+        }
+    ],
+    "permissions":[
+        "tabs",
+        "storage"
+    ]
+}
